@@ -20,7 +20,7 @@ int hourglassSum(vector<vector<int>> arr) {
   return ans;
 }
 
-void test_main(string input_file, string result_file) {
+void test_main(const string &input_file, const string &result_file) {
   std::ifstream input(input_file);
   std::cin.rdbuf(input.rdbuf());
   ofstream fout(result_file);
@@ -42,7 +42,7 @@ void test_main(string input_file, string result_file) {
   fout.close();
 }
 
-int read(string filename) {
+int read(const string &filename) {
   std::ifstream output(filename);
   std::cin.rdbuf(output.rdbuf());
   int result;

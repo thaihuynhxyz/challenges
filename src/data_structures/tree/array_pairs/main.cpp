@@ -1,5 +1,8 @@
+#define CATCH_CONFIG_RUNNER
+
 #include <algorithm>
 #include <bits/stdc++.h>
+#include "catch2/catch.hpp"
 
 using namespace std;
 
@@ -92,7 +95,11 @@ long solve(vector<int> &arr) {
   return count;
 }
 
-int main() {
+void test_main(const string &input_file, const string &result_file) {
+  std::ifstream input(input_file);
+  std::cin.rdbuf(input.rdbuf());
+  ofstream fout(result_file);
+
   int arr_count;
   cin >> arr_count;
   cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -112,9 +119,89 @@ int main() {
 
   long result = solve(arr);
 
-  cout << result << "\n";
+  fout << result << "\n";
+  fout.close();
+}
 
-  return 0;
+long read(const string &filename) {
+  std::ifstream output(filename);
+  std::cin.rdbuf(output.rdbuf());
+  long result;
+  cin >> result;
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+  return result;
+}
+
+TEST_CASE("Test case 0", "[single-file]") {
+  test_main("input00.txt", "result00.txt");
+
+  auto output = read("output00.txt");
+  auto result = read("result00.txt");
+
+  REQUIRE(result == output);
+}
+
+TEST_CASE("Test case 1", "[single-file]") {
+  test_main("input01.txt", "result01.txt");
+
+  auto output = read("output01.txt");
+  auto result = read("result01.txt");
+
+  REQUIRE(result == output);
+}
+
+TEST_CASE("Test case 2", "[single-file]") {
+  test_main("input02.txt", "result02.txt");
+
+  auto output = read("output02.txt");
+  auto result = read("result02.txt");
+
+  REQUIRE(result == output);
+}
+
+TEST_CASE("Test case 5", "[single-file]") {
+  test_main("input05.txt", "result05.txt");
+
+  auto output = read("output05.txt");
+  auto result = read("result05.txt");
+
+  REQUIRE(result == output);
+}
+
+TEST_CASE("Test case 6", "[single-file]") {
+  test_main("input06.txt", "result06.txt");
+
+  auto output = read("output06.txt");
+  auto result = read("result06.txt");
+
+  REQUIRE(result == output);
+}
+
+TEST_CASE("Test case 10", "[single-file]") {
+  test_main("input10.txt", "result10.txt");
+
+  auto output = read("output10.txt");
+  auto result = read("result10.txt");
+
+  REQUIRE(result == output);
+}
+
+TEST_CASE("Test case 19", "[single-file]") {
+  test_main("input19.txt", "result19.txt");
+
+  auto output = read("output19.txt");
+  auto result = read("result19.txt");
+
+  REQUIRE(result == output);
+}
+
+int main(int argc, char *argv[]) {
+  // global setup...
+
+  int result = Catch::Session().run(argc, argv);
+
+  // global clean-up...
+  return result;
 }
 
 vector<string> split_string(string input_string) {
