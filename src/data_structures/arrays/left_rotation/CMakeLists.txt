@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(dynamic_array main.cpp)
+add_executable(left_rotation main.cpp)
 
 install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/" # source directory
         DESTINATION ${CMAKE_CURRENT_BINARY_DIR} # target directory
