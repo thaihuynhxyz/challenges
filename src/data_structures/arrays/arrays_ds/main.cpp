@@ -1,4 +1,7 @@
+#define CATCH_CONFIG_RUNNER
+
 #include <bits/stdc++.h>
+#include "catch2/catch.hpp"
 
 using namespace std;
 
@@ -10,8 +13,11 @@ vector<int> reverseArray(vector<int> a) {
   return a;
 }
 
-int main()
-{
+void test_main(const string &input_file, const string &result_file) {
+  std::ifstream input(input_file);
+  std::cin.rdbuf(input.rdbuf());
+  ofstream fout(result_file);
+
   int arr_count;
   cin >> arr_count;
   cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -32,20 +38,48 @@ int main()
   vector<int> res = reverseArray(arr);
 
   for (int i = 0; i < res.size(); i++) {
-    cout << res[i];
+    fout << res[i];
 
     if (i != res.size() - 1) {
-      cout << " ";
+      fout << " ";
     }
   }
 
-  cout << "\n";
+  fout << "\n";
 
-  return 0;
+  fout.close();
+}
+
+vector<int> read(const string &filename) {
+  std::ifstream output(filename);
+  std::cin.rdbuf(output.rdbuf());
+  vector<int> result;
+  int element;
+  while (cin >> element) result.push_back(element);
+  return result;
+}
+
+TEST_CASE("Test case 8", "[single-file]") {
+  test_main("input08.txt", "result08.txt");
+
+  auto output = read("output08.txt");
+  auto result = read("result08.txt");
+
+  REQUIRE(result.size() == output.size());
+  for (auto i = 0; i < result.size(); i++) REQUIRE(result[i] == output[i]);
+}
+
+int main(int argc, char *argv[]) {
+  // global setup...
+
+  int result = Catch::Session().run(argc, argv);
+
+  // global clean-up...
+  return result;
 }
 
 vector<string> split_string(string input_string) {
-  string::iterator new_end = unique(input_string.begin(), input_string.end(), [] (const char &x, const char &y) {
+  string::iterator new_end = unique(input_string.begin(), input_string.end(), [](const char &x, const char &y) {
     return x == y and x == ' ';
   });
 

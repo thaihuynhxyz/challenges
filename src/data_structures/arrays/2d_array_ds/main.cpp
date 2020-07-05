@@ -54,7 +54,7 @@ int read(string filename) {
 TEST_CASE("Test case 0", "[single-file]") {
   test_main("input00.txt", "result00.txt");
 
-  auto output = read("output01.txt");
+  auto output = read("output00.txt");
   auto result = read("result00.txt");
 
   REQUIRE(result == output);
