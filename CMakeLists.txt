@@ -3,4 +3,6 @@ project(hacker_rank)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_subdirectory(data_structures)
+include_directories(include)
+
+add_subdirectory(src/data_structures)
