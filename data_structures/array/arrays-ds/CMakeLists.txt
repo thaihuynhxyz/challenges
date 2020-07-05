@@ -2,4 +2,4 @@ cmake_minimum_required(VERSION 3.16)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(array_pair main.cpp)
+add_executable(arrays_ds main.cpp)
