@@ -1,7 +1,8 @@
 # hackerrank
 
-| Problem                                                                           | Difficulty    | Score  | Test |
-| --------------------------------------------------------------------------------- |:-------------:|:------:|:----:|
+| Problem                                                                           | Difficulty    | Score   | Test |
+| --------------------------------------------------------------------------------- |:-------------:|:-------:|:----:|
+| [Print the Elements of a Linked List](https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list/problem)            | Easy          | 5/5     | 2/9  |
 | [Arrays - DS](https://www.hackerrank.com/challenges/arrays-ds/problem)            | Easy          | 10/10   | 1/9  |
 | [2D Array - DS](https://www.hackerrank.com/challenges/2d-array/problem)           | Easy          | 15/15   | 8/8  |
 | [Dynamic Array](https://www.hackerrank.com/challenges/dynamic-array/problem)      | Easy          | 15/15   | 3/11 |
