@@ -8,30 +8,7 @@ using namespace std;
 
 vector<string> split_string(string);
 
-/*
- * Complete the 'dynamicArray' function below.
- *
- * The function is expected to return an INTEGER_ARRAY.
- * The function accepts following parameters:
- *  1. INTEGER n
- *  2. 2D_INTEGER_ARRAY queries
- */
-
-vector<int> dynamicArray(int n, vector<vector<int>> queries) {
-  vector<int> lastAnswer;
-  vector<vector<int>> seqList(n);
-  for (auto query : queries) {
-    auto index = (query[1] ^ (lastAnswer.empty() ? 0 : lastAnswer.back())) % n;
-    switch (query[0]) {
-      case 1:seqList[index].push_back(query[2]);
-        break;
-      default:lastAnswer.push_back(seqList[index][query[2] % seqList[index].size()]);
-    }
-  }
-  return lastAnswer;
-}
-
-void test_main(string input_file, string result_file) {
+void test_main(const string &input_file, const string &result_file) {
   std::ifstream input(input_file);
   std::cin.rdbuf(input.rdbuf());
   ofstream fout(result_file);
@@ -65,7 +42,7 @@ void test_main(string input_file, string result_file) {
   fout.close();
 }
 
-vector<int> read(string filename) {
+vector<int> read(const string &filename) {
   std::ifstream output(filename);
   std::cin.rdbuf(output.rdbuf());
   vector<int> result;

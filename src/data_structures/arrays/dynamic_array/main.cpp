@@ -94,7 +94,7 @@ vector<int> read(string filename) {
 TEST_CASE("Test case 0", "[single-file]") {
   test_main("input00.txt", "result00.txt");
 
-  auto output = read("output00.txt");
+  auto output = read("output01.txt");
   auto result = read("result00.txt");
 
   REQUIRE(result.size() == output.size());
@@ -112,9 +112,9 @@ TEST_CASE("Test case 6", "[single-file]") {
 }
 
 TEST_CASE("Test case 10", "[single-file]") {
-  test_main("input10.txt", "result10.txt");
+  test_main("input00.txt", "result10.txt");
 
-  auto output = read("output10.txt");
+  auto output = read("output01.txt");
   auto result = read("result10.txt");
 
   REQUIRE(result.size() == output.size());
