@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_subdirectory(print_the_elements_of_a_linked_list)
+add_subdirectory(insert_a_node_at_the_tail_of_a_linked_list)
