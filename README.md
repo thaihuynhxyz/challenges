@@ -9,6 +9,7 @@
 | [Delete a Node](https://hackerrank.com/challenges/delete-a-node-from-a-linked-list/problem)            | Easy          | 5/5     | 2/9  |
 | [Print in Reverse](https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list-in-reverse/problem)            | Easy          | 5/5     | 2/7  |
 | [Reverse a linked list](https://www.hackerrank.com/challenges/reverse-a-linked-list/problem)            | Easy          | 5/5     | 2/7  |
+| [Compare two linked lists](https://www.hackerrank.com/challenges/compare-two-linked-lists/problem)            | Easy          | 5/5     | 2/7  |
 | [Arrays - DS](https://www.hackerrank.com/challenges/arrays-ds/problem)            | Easy          | 10/10   | 1/9  |
 | [2D Array - DS](https://www.hackerrank.com/challenges/2d-array/problem)           | Easy          | 15/15   | 8/8  |
 | [Dynamic Array](https://www.hackerrank.com/challenges/dynamic-array/problem)      | Easy          | 15/15   | 3/11 |
