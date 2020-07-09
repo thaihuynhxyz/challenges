@@ -4,3 +4,4 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_subdirectory(print_the_elements_of_a_linked_list)
 add_subdirectory(insert_a_node_at_the_tail_of_a_linked_list)
+add_subdirectory(insert_a_node_at_the_head_of_a_linked_list)
