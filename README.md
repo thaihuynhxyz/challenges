@@ -5,7 +5,8 @@
 | [Print the Elements of a Linked List](https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list/problem)            | Easy          | 5/5     | 2/9  |
 | [Insert a Node at the Tail of a Linked List](https://www.hackerrank.com/challenges/insert-a-node-at-the-tail-of-a-linked-list/problem)            | Easy          | 5/5     | 2/9  |
 | [Insert a node at the head of a linked list](https://www.hackerrank.com/challenges/insert-a-node-at-the-head-of-a-linked-list/problem)            | Easy          | 5/5     | 2/7  |
-| [Insert a node at a specific position in a linked list](hackerrank.com/challenges/insert-a-node-at-a-specific-position-in-a-linked-list/problem)            | Easy          | 5/5     | 3/10  |
+| [Insert a node at a specific position in a linked list](https://hackerrank.com/challenges/insert-a-node-at-a-specific-position-in-a-linked-list/problem)            | Easy          | 5/5     | 3/10  |
+| [Delete a Node](https://hackerrank.com/challenges/delete-a-node-from-a-linked-list/problem)            | Easy          | 5/5     | 2/9  |
 | [Arrays - DS](https://www.hackerrank.com/challenges/arrays-ds/problem)            | Easy          | 10/10   | 1/9  |
 | [2D Array - DS](https://www.hackerrank.com/challenges/2d-array/problem)           | Easy          | 15/15   | 8/8  |
 | [Dynamic Array](https://www.hackerrank.com/challenges/dynamic-array/problem)      | Easy          | 15/15   | 3/11 |
