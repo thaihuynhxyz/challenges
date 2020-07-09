@@ -12,6 +12,7 @@
 | [Compare two linked lists](https://www.hackerrank.com/challenges/compare-two-linked-lists/problem)            | Easy          | 5/5     | 2/7  |
 | [Merge two sorted linked lists](https://www.hackerrank.com/challenges/merge-two-sorted-linked-lists/problem)            | Easy          | 5/5     | 2/7  |
 | [Get Node Value](https://www.hackerrank.com/challenges/get-the-value-of-the-node-at-a-specific-position-from-the-tail)            | Easy          | 5/5     | 2/7  |
+| [Delete duplicate-value nodes from a sorted linked list](https://www.hackerrank.com/challenges/delete-duplicate-value-nodes-from-a-sorted-linked-list)            | Easy          | 5/5     | 2/7  |
 | [Arrays - DS](https://www.hackerrank.com/challenges/arrays-ds/problem)            | Easy          | 10/10   | 1/9  |
 | [2D Array - DS](https://www.hackerrank.com/challenges/2d-array/problem)           | Easy          | 15/15   | 8/8  |
 | [Dynamic Array](https://www.hackerrank.com/challenges/dynamic-array/problem)      | Easy          | 15/15   | 3/11 |
