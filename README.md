@@ -23,3 +23,4 @@
 | [Left Rotation](https://www.hackerrank.com/challenges/array-left-rotation/problem)| Easy          | 20/20   | 1/10 |
 | [Sparse Arrays](https://www.hackerrank.com/challenges/sparse-arrays/problem)      | Medium        | 25/25   | 3/13 |
 | [Array Pairs](https://www.hackerrank.com/challenges/array-pairs/problem)          | Advanced      | 100/100 | 7/20 |
+| [Rooted Tree](https://www.hackerrank.com/challenges/rooted-tree/problem)          | Hard          | 60/150  | 4/16 |
