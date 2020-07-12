@@ -23,6 +23,7 @@
 | [Compare the Triplets](https://www.hackerrank.com/challenges/compare-the-triplets/problem)         | Easy          | 10/10   | 2/8  |
 | [Simple Array Sum](https://www.hackerrank.com/challenges/simple-array-sum/problem)| Easy          | 10/10   | 1/3  |
 | [A Very Big Sum](https://www.hackerrank.com/challenges/a-very-big-sum/problem)    | Easy          | 10/10   | 1/2  |
+| [Diagonal Difference](https://www.hackerrank.com/challenges/diagonal-difference/problem)    | Easy          | 10/10   | 1/11  |
 | [Arrays - DS](https://www.hackerrank.com/challenges/arrays-ds/problem)            | Easy          | 10/10   | 1/9  |
 | [2D Array - DS](https://www.hackerrank.com/challenges/2d-array/problem)           | Easy          | 15/15   | 8/8  |
 | [Dynamic Array](https://www.hackerrank.com/challenges/dynamic-array/problem)      | Easy          | 15/15   | 3/11 |
