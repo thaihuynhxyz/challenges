@@ -2,6 +2,7 @@
 
 | Problem                                                                           | Difficulty    | Score   | Test |
 | --------------------------------------------------------------------------------- |:-------------:|:-------:|:----:|
+| [Solve Me First](https://www.hackerrank.com/challenges/solve-me-first/problem)    | Easy          | 1/1   | 2/2  |
 | [Print the Elements of a Linked List](https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list/problem)            | Easy          | 5/5     | 2/9  |
 | [Insert a Node at the Tail of a Linked List](https://www.hackerrank.com/challenges/insert-a-node-at-the-tail-of-a-linked-list/problem)            | Easy          | 5/5     | 2/9  |
 | [Insert a node at the head of a linked list](https://www.hackerrank.com/challenges/insert-a-node-at-the-head-of-a-linked-list/problem)            | Easy          | 5/5     | 2/7  |
