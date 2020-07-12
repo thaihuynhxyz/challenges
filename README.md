@@ -18,6 +18,7 @@
 | [Inserting a Node Into a Sorted Doubly Linked List](https://www.hackerrank.com/challenges/insert-a-node-into-a-sorted-doubly-linked-list/problem)            | Easy          | 5/5     | 2/7  |
 | [Reverse a doubly linked list](https://www.hackerrank.com/challenges/reverse-a-doubly-linked-list/problem)            | Easy          | 5/5     | 2/7  |
 | [Grading Students](https://www.hackerrank.com/challenges/grading/problem)         | Easy          | 10/10   | 1/7  |
+| [Birthday Chocolate](https://www.hackerrank.com/challenges/the-birthday-bar/problem)         | Easy          | 10/10   | 4/14  |
 | [Arrays - DS](https://www.hackerrank.com/challenges/arrays-ds/problem)            | Easy          | 10/10   | 1/9  |
 | [2D Array - DS](https://www.hackerrank.com/challenges/2d-array/problem)           | Easy          | 15/15   | 8/8  |
 | [Dynamic Array](https://www.hackerrank.com/challenges/dynamic-array/problem)      | Easy          | 15/15   | 3/11 |

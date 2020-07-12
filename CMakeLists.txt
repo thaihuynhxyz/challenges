@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(include)
 
 add_subdirectory(src/data_structures)
-add_subdirectory(src/implementation/grading_students)
+add_subdirectory(src/algorithms)
