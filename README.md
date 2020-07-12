@@ -21,6 +21,7 @@
 | [Grading Students](https://www.hackerrank.com/challenges/grading/problem)         | Easy          | 10/10   | 1/7  |
 | [Birthday Chocolate](https://www.hackerrank.com/challenges/the-birthday-bar/problem)         | Easy          | 10/10   | 4/14  |
 | [Compare the Triplets](https://www.hackerrank.com/challenges/compare-the-triplets/problem)         | Easy          | 10/10   | 2/8  |
+| [Simple Array Sum](https://www.hackerrank.com/challenges/simple-array-sum/problem)| Easy          | 10/10   | 1/3  |
 | [Arrays - DS](https://www.hackerrank.com/challenges/arrays-ds/problem)            | Easy          | 10/10   | 1/9  |
 | [2D Array - DS](https://www.hackerrank.com/challenges/2d-array/problem)           | Easy          | 15/15   | 8/8  |
 | [Dynamic Array](https://www.hackerrank.com/challenges/dynamic-array/problem)      | Easy          | 15/15   | 3/11 |
