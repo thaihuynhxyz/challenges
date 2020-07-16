@@ -5,41 +5,81 @@
 
 using namespace std;
 
-vector<string> split_string(string);
+class Node {
+ public:
+  int data;
+  Node *left;
+  Node *right;
+  Node(int d) {
+    data = d;
+    left = NULL;
+    right = NULL;
+  }
+};
 
-// Complete the miniMaxSum function below.
-void miniMaxSum(const vector<int> &arr, ofstream &fout) {
-  auto total = 0L;
-  auto minValue = INT_MAX;
-  auto maxValue = 0;
-  for (auto value : arr) {
-    total += value;
-    minValue = min(minValue, value);
-    maxValue = max(maxValue, value);
+class Solution {
+ public:
+  Node *insert(Node *root, int data) {
+    if (root == NULL) {
+      return new Node(data);
+    } else {
+      Node *cur;
+      if (data <= root->data) {
+        cur = insert(root->left, data);
+        root->left = cur;
+      } else {
+        cur = insert(root->right, data);
+        root->right = cur;
+      }
+
+      return root;
+    }
   }
 
-  fout << total - maxValue << " " << total - minValue;
-}
+/* you only have to complete the function given below.
+Node is defined as
+
+class Node {
+    public:
+        int data;
+        Node *left;
+        Node *right;
+        Node(int d) {
+            data = d;
+            left = NULL;
+            right = NULL;
+        }
+};
+
+*/
+
+  void preOrder(Node *root, ofstream &fout) {
+    fout << root->data << " ";
+    if (root->left) preOrder(root->left, fout);
+    if (root->right) preOrder(root->right, fout);
+  }
+
+}; //End of Solution
 
 void test_main(const string &input_file, const string &result_file) {
   std::ifstream input(input_file);
   std::cin.rdbuf(input.rdbuf());
   ofstream fout(result_file);
 
-  string arr_temp_temp;
-  getline(cin, arr_temp_temp);
+  Solution myTree;
+  Node *root = NULL;
 
-  vector<string> arr_temp = split_string(arr_temp_temp);
+  int t;
+  int data;
 
-  vector<int> arr(5);
+  std::cin >> t;
 
-  for (int i = 0; i < 5; i++) {
-    int arr_item = stoi(arr_temp[i]);
-
-    arr[i] = arr_item;
+  while (t-- > 0) {
+    std::cin >> data;
+    root = myTree.insert(root, data);
   }
 
-  miniMaxSum(arr, fout);
+  myTree.preOrder(root, fout);
 
   fout.close();
 }
@@ -63,11 +103,11 @@ TEST_CASE("Test case 0", "[single-file]") {
   for (auto i = 0; i < result.size(); i++) REQUIRE(result[i] == output[i]);
 }
 
-TEST_CASE("Test case 14", "[single-file]") {
-  test_main("input14.txt", "result14.txt");
+TEST_CASE("Test case 2", "[single-file]") {
+  test_main("input02.txt", "result02.txt");
 
-  auto output = read("output14.txt");
-  auto result = read("result14.txt");
+  auto output = read("output02.txt");
+  auto result = read("result02.txt");
 
   REQUIRE(result.size() == output.size());
   for (auto i = 0; i < result.size(); i++) REQUIRE(result[i] == output[i]);
