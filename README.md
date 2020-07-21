@@ -30,6 +30,7 @@
 | [Arrays - DS](https://www.hackerrank.com/challenges/arrays-ds/problem)            | Easy          | 10/10   | 1/9  |
 | [Tree: Preorder Traversal](https://www.hackerrank.com/challenges/tree-preorder-traversal/problem)            | Easy          | 10/10   | 2/6  |
 | [Tree: Postorder Traversal](https://www.hackerrank.com/challenges/tree-postorder-traversal/problem)            | Easy          | 10/10   | 2/6  |
+| [Tree: Inorder Traversal](https://www.hackerrank.com/challenges/tree-inorder-traversal/problem)            | Easy          | 10/10   | 2/6  |
 | [2D Array - DS](https://www.hackerrank.com/challenges/2d-array/problem)           | Easy          | 15/15   | 8/8  |
 | [Dynamic Array](https://www.hackerrank.com/challenges/dynamic-array/problem)      | Easy          | 15/15   | 3/11 |
 | [Left Rotation](https://www.hackerrank.com/challenges/array-left-rotation/problem)| Easy          | 20/20   | 1/10 |
