@@ -59,6 +59,11 @@ class RootedTree {
     }
   }
 
+  bool hasValue(const int &it) {
+    auto value = values[it];
+    return value.first || value.second;
+  }
+
   void update(const int &t, const long &v, const long &k) {
     auto t_index = t - 1;
     auto value = values[t_index];
@@ -75,17 +80,13 @@ class RootedTree {
       for (auto it : child[front]) {
         if (visited.emplace(it).second) {
           root[it] = t_index;
-          auto value_it = values[it];
-          if (!value_it.first && !value_it.second) queue.push(it);
+          if (!hasValue(it)) queue.push(it);
         }
       }
     }
   }
 
-  long report(const int &a, const long &b) {
-    if (a == 1193 && b == 57031) {
-      cout << "debug";
-    }
+  long report(const int &a, const int &b) {
     long result = 0;
     auto aIndex = a - 1;
     auto bIndex = b - 1;
@@ -94,28 +95,31 @@ class RootedTree {
     auto aStartLevel = aLevel;
     auto bStartLevel = bLevel;
 
+    result += values[a - 1].first;
+    if (a != b) result += values[b - 1].first;
+    result = result % NUMBER;
+
     // Find common root
-    while (true) {
-      auto aRootIndex = root[aIndex];
-      auto bRootIndex = root[bIndex];
-      if (aRootIndex == bRootIndex) break;
-      auto aRootLevel = level[aRootIndex];
-      auto bRootLevel = level[bRootIndex];
-      if (aRootLevel > bRootLevel || bRootIndex == -1) {
+    auto aRootIndex = root[aIndex];
+    auto bRootIndex = root[bIndex];
+    while (aRootIndex != bRootIndex) {
+      auto aRootLevel = aRootIndex > -1 ? level[aRootIndex] : -1;
+      auto bRootLevel = bRootIndex > -1 ? level[bRootIndex] : -1;
+      if (aRootLevel > bRootLevel) {
         aIndex = aRootIndex;
         aLevel = aRootLevel;
         auto distance = aStartLevel - aLevel;
         auto value = values[aIndex];
         result += (value.first * (distance + (aIndex != bIndex)) + value.second * distance * (distance + 1) / 2);
         result = result % NUMBER;
-      } else if (bRootLevel > aRootLevel || aRootIndex == -1) {
+      } else if (bRootLevel > aRootLevel) {
         bIndex = bRootIndex;
         bLevel = bRootLevel;
         auto distance = bStartLevel - bLevel;
         auto value = values[bIndex];
         result += (value.first * (distance + (aIndex != bIndex)) + value.second * distance * (distance + 1) / 2);
         result = result % NUMBER;
-      } else if (aRootIndex != bRootIndex) {
+      } else {
         aIndex = aRootIndex;
         aLevel = aRootLevel;
         auto distance = aStartLevel - aLevel;
@@ -129,19 +133,12 @@ class RootedTree {
         result += (value.first * (distance + (aIndex != bIndex)) + value.second * distance * (distance + 1) / 2);
         result = result % NUMBER;
       }
+      aRootIndex = root[aIndex];
+      bRootIndex = root[bIndex];
     }
 
-    result += values[a - 1].first;
-    if (a != b) result += values[b - 1].first;
-    result = result % NUMBER;
-
-    auto rootIndex = root[aIndex];
-    if (rootIndex == -1) {
-      if (result == 248398292) {
-        cout << "debug";
-      }
-      return result;
-    }
+    auto rootIndex = root[aLevel > bLevel ? aIndex : bIndex];
+    if (rootIndex == -1 || !hasValue(rootIndex)) return result;
 
     while (aLevel > bLevel) {
       aIndex = parent[aIndex];
@@ -157,7 +154,7 @@ class RootedTree {
       bIndex = parent[bIndex];
       bLevel--;
     }
-    auto endLevel = aLevel;
+    auto endLevel = max(aLevel, bLevel);
 
     while (rootIndex != -1) {
       auto value = values[rootIndex];
@@ -172,9 +169,6 @@ class RootedTree {
 
       result = result % NUMBER;
       rootIndex = root[rootIndex];
-    }
-    if (result == 248398292) {
-      cout << "debug";
     }
     return result;
   }
@@ -217,12 +211,12 @@ vector<long> read(const string &filename) {
   std::ifstream output(filename);
   std::cin.rdbuf(output.rdbuf());
   vector<long> result;
-  int element;
+  long element;
   while (cin >> element) result.push_back(element);
   return result;
 }
 
-TEST_CASE("Test case 0", "[single-file]") {
+TEST_CASE("Test case 00", "[single-file]") {
   test_main("input00.txt", "result00.txt");
 
   auto output = read("output00.txt");
@@ -232,7 +226,7 @@ TEST_CASE("Test case 0", "[single-file]") {
   for (auto i = 0; i < result.size(); i++) REQUIRE(result[i] == output[i]);
 }
 
-TEST_CASE("Test case 1", "[single-file]") {
+TEST_CASE("Test case 01", "[single-file]") {
   test_main("input01.txt", "result01.txt");
 
   auto output = read("output01.txt");
@@ -242,7 +236,7 @@ TEST_CASE("Test case 1", "[single-file]") {
   for (auto i = 0; i < result.size(); i++) REQUIRE(result[i] == output[i]);
 }
 
-TEST_CASE("Test case 9", "[single-file]") {
+TEST_CASE("Test case 09", "[single-file]") {
   test_main("input09.txt", "result09.txt");
 
   auto output = read("output09.txt");
@@ -261,16 +255,6 @@ TEST_CASE("Test case 15", "[single-file]") {
   REQUIRE(result.size() == output.size());
   for (auto i = 0; i < result.size(); i++) REQUIRE(result[i] == output[i]);
 }
-
-//TEST_CASE("Test case xx", "[single-file]") {
-//  test_main("inputxx.txt", "resultxx.txt");
-//
-//  auto output = read("outputxx.txt");
-//  auto result = read("resultxx.txt");
-//
-//  REQUIRE(result.size() == output.size());
-//  for (auto i = 0; i < result.size(); i++) REQUIRE(result[i] == output[i]);
-//}
 
 int main(int argc, char *argv[]) {
   // global setup...
