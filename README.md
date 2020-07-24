@@ -35,6 +35,7 @@
 | [2D Array - DS](https://www.hackerrank.com/challenges/2d-array/problem)           | Easy          | 15/15   | 8/8  |
 | [Dynamic Array](https://www.hackerrank.com/challenges/dynamic-array/problem)      | Easy          | 15/15   | 3/11 |
 | [Left Rotation](https://www.hackerrank.com/challenges/array-left-rotation/problem)| Easy          | 20/20   | 1/10 |
+| [Tree : Top View](https://www.hackerrank.com/challenges/tree-top-view/problem)    | Easy          | 20/20   | 1/6  |
 | [Sparse Arrays](https://www.hackerrank.com/challenges/sparse-arrays/problem)      | Medium        | 25/25   | 3/13 |
 | [Find Maximum Index Product](https://www.hackerrank.com/challenges/find-maximum-index-product/problem)          | Medium      | 100/100 | 2/13 |
 | [Array Pairs](https://www.hackerrank.com/challenges/array-pairs/problem)          | Advanced      | 100/100 | 7/20 |
