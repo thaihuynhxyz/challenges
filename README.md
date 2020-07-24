@@ -38,6 +38,7 @@
 | [Tree : Top View](https://www.hackerrank.com/challenges/tree-top-view)            | Easy          | 20/20   | 1/6  |
 | [Tree: Level Order Traversal](https://www.hackerrank.com/challenges/tree-level-order-traversal)    | Easy          | 20/20   | 1/6  |
 | [Binary Search Tree : Insertion](https://www.hackerrank.com/challenges/binary-search-tree-insertion)    | Easy          | 20/20   | 1/6  |
+| [Tree: Huffman Decoding](https://www.hackerrank.com/challenges/tree-huffman-decoding)    | Medium          | 20/20   | 3/7  |
 | [Sparse Arrays](https://www.hackerrank.com/challenges/sparse-arrays)              | Medium        | 25/25   | 3/13 |
 | [Binary Search Tree : Lowest Common Ancestor](https://www.hackerrank.com/challenges/binary-search-tree-lowest-common-ancestor)    | Easy          | 30/30   | 1/6  |
 | [Find Maximum Index Product](https://www.hackerrank.com/challenges/find-maximum-index-product)          | Medium      | 100/100 | 2/13 |
