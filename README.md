@@ -42,6 +42,7 @@
 | [Sparse Arrays](https://www.hackerrank.com/challenges/sparse-arrays)              | Medium        | 25/25   | 3/13 |
 | [Binary Search Tree : Lowest Common Ancestor](https://www.hackerrank.com/challenges/binary-search-tree-lowest-common-ancestor)    | Easy          | 30/30   | 1/6  |
 | [Is This a Binary Search Tree?](https://www.hackerrank.com/challenges/is-binary-search-tree)        | Medium        | 30/30   | 2/14 |
+| [Optimal Network Routing](https://www.hackerrank.com/contests/hack-the-interview-iv-apac/challenges/optimal-path-1)        | Medium        | 30/30   | 6/20 |
 | [Swap Nodes [Algo]](https://www.hackerrank.com/challenges/swap-nodes-algo)        | Medium        | 40/40   | 4/12 |
 | [Find Maximum Index Product](https://www.hackerrank.com/challenges/find-maximum-index-product)          | Medium      | 100/100 | 2/13 |
 | [Array Pairs](https://www.hackerrank.com/challenges/array-pairs)                  | Advanced      | 100/100 | 7/20 |

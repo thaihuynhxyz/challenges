@@ -7,3 +7,4 @@ include_directories(include)
 
 add_subdirectory(src/data_structures)
 add_subdirectory(src/algorithms)
+add_subdirectory(src/all_contests)
