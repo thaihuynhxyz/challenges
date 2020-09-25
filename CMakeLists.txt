@@ -3,7 +3,7 @@ project(hacker_rank)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(include)
+include_directories(${CMAKE_INCLUDE_PATH} include)
 
 add_subdirectory(src/data_structures)
 add_subdirectory(src/algorithms)
