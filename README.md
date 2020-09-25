@@ -39,6 +39,7 @@
 | [Tree: Level Order Traversal](https://www.hackerrank.com/challenges/tree-level-order-traversal)    | Easy          | 20/20   | 6/6  |
 | [Binary Search Tree : Insertion](https://www.hackerrank.com/challenges/binary-search-tree-insertion)    | Easy          | 20/20   | 6/6  |
 | [Tree: Huffman Decoding](https://www.hackerrank.com/challenges/tree-huffman-decoding)    | Medium          | 20/20   | 7/7  |
+| [Picking Numbers](https://www.hackerrank.com/challenges/picking-numbers/problem)  | Easy          | 20/20   | 10/10 |
 | [Forming_a_Magic_Square](https://www.hackerrank.com/challenges/magic-square-forming/problem)              | Medium        | 20/20   | 23/23 |
 | [Sparse Arrays](https://www.hackerrank.com/challenges/sparse-arrays)              | Medium        | 25/25   | 13/13 |
 | [Binary Search Tree : Lowest Common Ancestor](https://www.hackerrank.com/challenges/binary-search-tree-lowest-common-ancestor)    | Easy          | 30/30   | 6/6  |
