@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.16)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_subdirectory(longest_continuous_subarray_with_absolute_diff_less_than_or_equal_to_limit)

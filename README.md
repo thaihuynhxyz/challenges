@@ -49,3 +49,8 @@
 | [Find Maximum Index Product](https://www.hackerrank.com/challenges/find-maximum-index-product)          | Medium      | 100/100 | 13/13 |
 | [Array Pairs](https://www.hackerrank.com/challenges/array-pairs)                  | Advanced      | 100/100 | 20/20 |
 | [Rooted Tree](https://www.hackerrank.com/challenges/rooted-tree)                  | Hard          | 80/150  | 4/16 |
+
+# leetcode
+| Problem                                                                           | Difficulty    | Test |
+| --------------------------------------------------------------------------------- |:-------------:|:----:|
+| [Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/)            | Medium          | 60/60  |

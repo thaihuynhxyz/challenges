@@ -5,6 +5,5 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(${CMAKE_INCLUDE_PATH} include)
 
-add_subdirectory(src/data_structures)
-add_subdirectory(src/algorithms)
-add_subdirectory(src/all_contests)
+add_subdirectory(src/hacker_rank)
+add_subdirectory(src/leet_code)
