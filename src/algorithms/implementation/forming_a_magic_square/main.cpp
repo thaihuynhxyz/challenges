@@ -1,61 +1,29 @@
 #define CATCH_CONFIG_RUNNER
 
-#include <bits/stdc++.h>
 #include "catch2/catch.hpp"
 
 using namespace std;
 
-int diff(int a, int b) { return abs(a - b); }
-
-bool canPlace(const list<int> &m, const int &i) {
-    if (i == 5 || m.size() == 9) return false;
-    for (const auto &f : m) if (f == i) return false;
-    switch (m.size()) {
-        case 1:
-            return true;
-        case 3:
-            if ((m.back() + i > 14) || (m.front() - i > 4)) return false;
-            break;
-        case 5:
-            if ((m.front() + i > 14) || (m.back() - i > 4)) return false;
-            break;
-        case 7:
-            const auto m11 = next(m.begin());
-            const auto m10 = next(m11);
-            const auto m21 = prev(m.end(), 2);
-            if ((i + m.front() + *m11 != 15) || (i + *m10 + *m21 != 15)) return false;
-    }
-    return true;
-}
-
-void backtracking(list<int> &magicSquare, vector<list<int>> &availableMagicSquares) {
-    for (int i = 1; i < 10; i++) {
-        if (canPlace(magicSquare, i)) {
-            magicSquare.push_front(i);
-            magicSquare.push_back(10 - i);
-
-            if (magicSquare.size() == 9) {
-                availableMagicSquares.push_back(magicSquare);
-            } else {
-                backtracking(magicSquare, availableMagicSquares);
-            }
-
-            magicSquare.pop_front();
-            magicSquare.pop_back();
-        }
-    }
-}
-
 // Complete the formingMagicSquare function below.
 int formingMagicSquare(const vector<vector<int>> &s) {
-    const list<int> origin = {s[0][0], s[0][1], s[0][2], s[1][0], s[1][1], s[1][2], s[2][0], s[2][1], s[2][2]};
+    const vector<vector<vector<int>>> magicSquares = {{{8, 1, 6}, {3, 5, 7}, {4, 9, 2}},
+                                                      {{6, 1, 8}, {7, 5, 3}, {2, 9, 4}},
+                                                      {{4, 9, 2}, {3, 5, 7}, {8, 1, 6}},
+                                                      {{2, 9, 4}, {7, 5, 3}, {6, 1, 8}},
+                                                      {{8, 3, 4}, {1, 5, 9}, {6, 7, 2}},
+                                                      {{4, 3, 8}, {9, 5, 1}, {2, 7, 6}},
+                                                      {{6, 7, 2}, {1, 5, 9}, {8, 3, 4}},
+                                                      {{2, 7, 6}, {9, 5, 1}, {4, 3, 8}}};
     auto result = INT_MAX;
-    list<int> magicSquare({5});
-    vector<list<int>> availableMagicSquares;
-    backtracking(magicSquare, availableMagicSquares);
-
-    for (const auto &ams : availableMagicSquares) {
-        result = min(result, inner_product(ams.begin(), ams.end(), origin.begin(), 0, plus<>(), diff));
+    int diff;
+    for (const auto &ms : magicSquares) {
+        diff = 0;
+        for (auto i = 0; i < 3; i++) {
+            for (auto j = 0; j < 3; j++) {
+                diff += abs(ms[i][j] - s[i][j]);
+            }
+        }
+        result = min(result, diff);
     }
 
     return result;
