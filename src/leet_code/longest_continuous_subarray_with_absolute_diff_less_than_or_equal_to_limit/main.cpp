@@ -12,50 +12,21 @@ string rtrim(const string &);
 vector<string> split(const string &);
 
 int longestSubarray(vector<int> &nums, const int &limit) {
-  multiset<int> s;
   auto l = nums.begin();
-  auto r = nums.begin();
-  int count = 0;
+  deque<int> inc, dec;
   int result = 0;
-  while (r != nums.end()) {
-    if (!s.empty() && (abs(*s.begin() - *r) > limit || abs(*prev(s.end()) - *r) > limit)) {
-      result = max(result, count);
-      int n = 0;
-      if (*r < *s.begin()) {
-        auto upper = s.upper_bound(*r + limit);
-        while (upper != s.end()) {
-          auto tmp = next(upper, s.count(*upper));
-          n += s.erase(*upper);
-          upper = tmp;
-        }
-        while (l != r && n > 0) {
-          if (*l > *r + limit) n--;
-          s.erase(*l);
-          l++;
-          count--;
-        }
-      } else {
-        auto lower = s.lower_bound(*r - limit);
-        auto e = s.begin();
-        while (e != lower) {
-          auto temp = next(e, s.count(*e));
-          n += s.erase(*e);
-          e = temp;
-        }
-        while (l != r && n > 0) {
-          if (*l < *r - limit) n--;
-          s.erase(*l);
-          l++;
-          count--;
-        }
-      }
-    } else {
-      s.insert(*r);
-      r++;
-      count++;
+  for (auto r = l; r != nums.end(); r++) {
+    while (!inc.empty() && *r < inc.back()) inc.pop_back();
+    while (!dec.empty() && *r > dec.back()) dec.pop_back();
+    inc.push_back(*r);
+    dec.push_back(*r);
+    while (dec.front() - inc.front() > limit) {
+      if (inc.front() == *l) inc.pop_front();
+      if (dec.front() == *l) dec.pop_front();
+      l++;
     }
+    result = max(result, int(r - l + 1));
   }
-  result = max(result, count);
   return result;
 }
 
