@@ -54,6 +54,7 @@
 | Problem                                                                           | Difficulty    | Test |
 | --------------------------------------------------------------------------------- |:-------------:|:----:|
 | [Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/)            | Medium          | [60/60](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/longest_continuous_subarray_with_absolute_diff_less_than_or_equal_to_limit)  |
+| [Minimum Operations to Make a Uni-Value Grid](https://leetcode.com/contest/weekly-contest-262/problems/minimum-operations-to-make-a-uni-value-grid/)            | Medium          | [42/42](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/minimum_operations_to_make_a_uni_value_grid)  |
 
 # codility
 | Problem                                                                           | Difficulty    | Test |
