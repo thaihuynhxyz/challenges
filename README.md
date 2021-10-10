@@ -54,3 +54,8 @@
 | Problem                                                                           | Difficulty    | Test |
 | --------------------------------------------------------------------------------- |:-------------:|:----:|
 | [Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/)            | Medium          | [60/60](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/longest_continuous_subarray_with_absolute_diff_less_than_or_equal_to_limit)  |
+
+# codility
+| Problem                                                                           | Difficulty    | Test |
+| --------------------------------------------------------------------------------- |:-------------:|:----:|
+| [Stack of Coins](https://app.codility.com/programmers/challenges/spooktober_2021/)|       ?       | [?/?](https://github.com/thaihuynhxyz/challenges/tree/master/src/codility/spooktober/stack_of_coins)  |
