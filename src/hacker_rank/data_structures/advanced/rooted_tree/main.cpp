@@ -38,7 +38,7 @@ class RootedTree {
   }
 
   void set_root(const int &r) {
-    set<int> visited;
+    unordered_set<int> visited;
     queue<int> queue;
     auto r_index = r - 1;
     queue.push(r_index);
@@ -71,7 +71,7 @@ class RootedTree {
     values[t_index] = pair<long, long>(value.first + v, value.second + k);
     if (just_update) return;
 
-    set<int> visited;
+    unordered_set<int> visited;
     queue<int> queue;
     queue.push(t_index);
     while (!queue.empty()) {

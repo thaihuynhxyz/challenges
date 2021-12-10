@@ -22,7 +22,7 @@ int getMinEffort(const vector<vector<int>> &C) {
   auto height = C.size();
   auto width = C.back().size();
   vector<int> efforts(width * height, INT_MAX);
-  set<int> visited;
+  unordered_set<int> visited;
   vector<int> ordered;
   ordered.emplace_back(0);
   visited.emplace(0);
