@@ -4,3 +4,4 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_subdirectory(longest_continuous_subarray_with_absolute_diff_less_than_or_equal_to_limit)
 add_subdirectory(minimum_operations_to_make_a_uni_value_grid)
+add_subdirectory(rectangle_area)
