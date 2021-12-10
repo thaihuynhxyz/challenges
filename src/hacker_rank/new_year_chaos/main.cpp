@@ -8,18 +8,31 @@ using namespace std;
 vector<string> split_string(string);
 
 /*
- * Complete the 'rotLeft' function below.
+ * Complete the 'minimumBribes' function below.
  *
- * The function is expected to return an INTEGER_ARRAY.
- * The function accepts following parameters:
- *  1. INTEGER_ARRAY a
- *  2. INTEGER d
+ * The function accepts INTEGER_ARRAY q as parameter.
  */
 
-vector<int> rotLeft(vector<int> a, int d) {
-    vector<int> result(a.begin() + d, a.end());
-    result.insert(result.end(), a.begin(), a.begin() + d);
-    return result;
+void minimumBribes(vector<int> q, ofstream &fout) {
+    auto result = 0;
+    unordered_map<int, int> bribes;
+    for (auto i = q.rbegin(); i != q.rend(); i++) {
+        auto sorted = true;
+        for (auto j = q.begin(); j != i.base() - 1; j++) {
+            if (*j > *(j + 1)) {
+                bribes[*j]++;
+                if (bribes[*j] > 2) {
+                    fout << "Too chaotic" << endl;
+                    return;
+                }
+                iter_swap(j, j + 1);
+                result++;
+                sorted = false;
+            }
+        }
+        if (sorted) break;
+    }
+    fout << result << endl;
 }
 
 void test_main(const string &input_file, const string &result_file) {
@@ -27,51 +40,46 @@ void test_main(const string &input_file, const string &result_file) {
   std::cin.rdbuf(input.rdbuf());
   ofstream fout(result_file);
 
-  int n;
-  cin >> n;
-  cin.ignore(numeric_limits<streamsize>::max(), ' ');
-
-  int d;
-  cin >> d;
-
+  int t;
+  cin >> t;
   cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-  string ar_temp_temp;
-  getline(cin, ar_temp_temp);
+  for (int i = 0; i < t; i++) {
+    int n;
+    cin >> n;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-  vector<string> ar_temp = split_string(ar_temp_temp);
+    string ar_temp_temp;
+    getline(cin, ar_temp_temp);
 
-  vector<int> ar(n);
+    vector<string> ar_temp = split_string(ar_temp_temp);
 
-  for (int i = 0; i < n; i++) {
-    int ar_item = stoi(ar_temp[i]);
+    vector<int> ar(n);
 
-    ar[i] = ar_item;
-  }
+    for (int i = 0; i < n; i++) {
+      int ar_item = stoi(ar_temp[i]);
 
-  vector<int> result = rotLeft(ar, d);
+      ar[i] = ar_item;
+    }
 
-  for (const auto &i : result) {
-    fout << i << " ";
+    minimumBribes(ar, fout);
   }
 
   fout.close();
 }
 
-vector<int> read(const string &filename) {
+vector<string> read(const string &filename) {
   std::ifstream output(filename);
   std::cin.rdbuf(output.rdbuf());
-  string ar_temp_temp;
-  getline(cin, ar_temp_temp);
 
-  vector<string> ar_temp = split_string(ar_temp_temp);
+  vector<string> result;
+  while (true) {
+    string str;
+    getline(cin, str);
+    if (str.empty()) break;
 
-  vector<int> result;
-
-  for (const auto &str : ar_temp) {
-    result.push_back(stoi(str));
+    result.push_back(str);
   }
-
   return result;
 }
 
