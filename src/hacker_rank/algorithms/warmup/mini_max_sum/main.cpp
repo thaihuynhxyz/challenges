@@ -12,7 +12,7 @@ void miniMaxSum(const vector<int> &arr, ofstream &fout) {
   auto total = 0L;
   auto minValue = INT_MAX;
   auto maxValue = 0;
-  for (auto value : arr) {
+  for (const auto &value : arr) {
     total += value;
     minValue = min(minValue, value);
     maxValue = max(maxValue, value);

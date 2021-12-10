@@ -11,7 +11,7 @@ vector<string> split_string(string);
 void plusMinus(vector<int> arr, ofstream &fout) {
   float p = 0, n = 0, z = 0;
   auto s = arr.size();
-  for (auto i : arr) {
+  for (const auto &i : arr) {
     if (i < 0) {
       n += 1;
     } else if (i > 0) {

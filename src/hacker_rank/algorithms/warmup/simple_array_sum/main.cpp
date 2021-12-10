@@ -14,9 +14,7 @@ int simpleArraySum(vector<int> ar) {
   /*
    * Write your code here.
    */
-  auto result = 0;
-  for (auto i : ar) result += i;
-  return result;
+  return std::accumulate(ar.begin(), ar.end(), decltype(ar)::value_type(0));
 }
 
 void test_main(const string &input_file, const string &result_file) {
