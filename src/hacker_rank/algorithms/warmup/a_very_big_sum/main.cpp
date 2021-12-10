@@ -9,9 +9,7 @@ vector<string> split_string(string);
 
 // Complete the aVeryBigSum function below.
 long aVeryBigSum(vector<long> ar) {
-  auto result = 0L;
-  for (auto i : ar) result += i;
-  return result;
+  return std::accumulate(ar.begin(), ar.end(), decltype(ar)::value_type(0));
 }
 
 void test_main(const string &input_file, const string &result_file) {
