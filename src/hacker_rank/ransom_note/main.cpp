@@ -7,16 +7,25 @@ using namespace std;
 
 vector<string> split_string(string);
 
-// Complete the minimumSwaps function below.
-int minimumSwaps(vector<int> arr) {
-  auto result = 0;
-  for (int i = arr.size() - 1; i >= 0; i--) {
-    while (arr[i] != i + 1) {
-      iter_swap(arr.begin() + i, arr.begin() + arr[i] - 1);
-      result++;
+/*
+ * Complete the 'checkMagazine' function below.
+ *
+ * The function accepts following parameters:
+ *  1. STRING_ARRAY magazine
+ *  2. STRING_ARRAY note
+ */
+
+string checkMagazine(vector<string> magazine, vector<string> note) {
+  unordered_map<string, int> map;
+  for (const auto &str : magazine) map[str]++;
+  
+  for (const auto &str : note) {
+    map[str]--;
+    if (map[str] < 0) {
+      return "No";
     }
   }
-  return result;
+  return "Yes";
 }
 
 void test_main(const string &input_file, const string &result_file) {
@@ -24,36 +33,34 @@ void test_main(const string &input_file, const string &result_file) {
   std::cin.rdbuf(input.rdbuf());
   ofstream fout(result_file);
 
-  int ar_count;
-  cin >> ar_count;
+
+  int m_count;
+  cin >> m_count;
+  cin.ignore(numeric_limits<streamsize>::max(), ' ');
+  int n_count;
+  cin >> n_count;
   cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-  string ar_temp_temp;
-  getline(cin, ar_temp_temp);
+  string magazine_temp;
+  getline(cin, magazine_temp);
+  vector<string> magazine = split_string(magazine_temp);
 
-  vector<string> ar_temp = split_string(ar_temp_temp);
+  string note_temp;
+  getline(cin, note_temp);
+  vector<string> note = split_string(note_temp);
 
-  vector<int> ar(ar_count);
-
-  for (int i = 0; i < ar_count; i++) {
-    int ar_item = stoi(ar_temp[i]);
-
-    ar[i] = ar_item;
-  }
-
-  int result = minimumSwaps(ar);
+  string result = checkMagazine(magazine, note);
 
   fout << result << "\n";
 
   fout.close();
 }
 
-long read(const string &filename) {
+string read(const string &filename) {
   std::ifstream output(filename);
   std::cin.rdbuf(output.rdbuf());
-  int result;
-  cin >> result;
-  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+  string result;
+  getline(cin, result);
   return result;
 }
 
