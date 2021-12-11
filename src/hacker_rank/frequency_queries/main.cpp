@@ -7,44 +7,31 @@ using namespace std;
 
 vector<string> split_string(string);
 
-/*
- * Complete the 'sherlockAndAnagrams' function below.
- *
- * The function is expected to return an INTEGER.
- * The function accepts STRING s as parameter.
- */
-
-int sherlockAndAnagrams(string s) {
-  auto stringFromArrayInt = [](array<int, 26> arr) {
-    std::ostringstream stream;
-    for (int i = 0; i < 26; i++) {
-      if (arr[i]) stream << i << arr[i];
-    }
-    return stream.str();
-  };
-  
-  auto charIndex = [](char c) { return c - 'a'; };
-  
-  unordered_map<string, int> map;
-  long ans = 0;
-  array<int, 26> arr;
-  
-  for (int size = 1; size < s.size() + 1; size++) {
-    for (int i = 0; i <= s.size() - size; i++) {
-      if (!i) {
-        for (int j = 0; j < size; j++) {
-          arr[charIndex(s[i + j])]++;
+// Complete the freqQuery function below.
+vector<int> freqQuery(vector<vector<int>> queries) {
+  vector<int> result;
+  unordered_map<int, int> map;
+  unordered_map<int, unordered_set<int>> reverse_map;
+  for (const auto &query : queries) {
+    auto data = query.back();
+    switch (query.front()) {
+      case 1:
+        reverse_map[map[data]].erase(data);
+        map[data]++;
+        reverse_map[map[data]].emplace(data);
+      break;
+      case 2:
+        if(map[data]) {
+          reverse_map[map[data]].erase(data);
+          map[data]--;
+          reverse_map[map[data]].emplace(data);
         }
-      } else {
-        arr[charIndex(s[i - 1])]--;
-        arr[charIndex(s[i + size - 1])]++;
-      }
-      auto str = stringFromArrayInt(arr);
-      ans += map[str];
-      map[str]++;
+      break;
+      case 3:
+        result.emplace_back(reverse_map[data].empty() ? 0 : 1);
     }
   }
-  return ans;
+  return result;
 }
 
 void test_main(const string &input_file, const string &result_file) {
@@ -52,16 +39,26 @@ void test_main(const string &input_file, const string &result_file) {
   std::cin.rdbuf(input.rdbuf());
   ofstream fout(result_file);
 
-  int t;
-  cin >> t;
+  int q;
+  cin >> q;
   cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-  for (int i = 0; i < t; i++) {
+  vector<vector<int>> queries;
+  for (int i = 0; i < q; i++) {
     string s;
     getline(cin, s);
+    auto queries_str = split_string(s);
 
-    const auto result = sherlockAndAnagrams(s);
+    vector<int> query;
+    for (const auto &query_str : queries_str) {
+      query.emplace_back(stoi(query_str));
+    }
+    queries.emplace_back(query);
+  }
 
+  const auto results = freqQuery(queries);
+
+  for (const auto & result : results) {
     fout << result << endl;
   }
 
@@ -106,15 +103,6 @@ TEST_CASE("Test case 2", "[single-file]") {
 
   auto output = read("output02.txt");
   auto result = read("result02.txt");
-
-  REQUIRE(result == output);
-}
-
-TEST_CASE("Test case 3", "[single-file]") {
-  test_main("input03.txt", "result03.txt");
-
-  auto output = read("output03.txt");
-  auto result = read("result03.txt");
 
   REQUIRE(result == output);
 }
