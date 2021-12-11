@@ -15,42 +15,6 @@ vector<string> split_string(string);
  */
 
 int sherlockAndAnagrams(string s) {
-  auto nCr = [](int n, int r) {
-    // p holds the value of n*(n-1)*(n-2)...,
-    // k holds the value of r*(r-1)...
-    long long p = 1, k = 1;
- 
-    // C(n, r) == C(n, n-r),
-    // choosing the smaller value
-    r = min(n - r, r);
- 
-    if (r != 0) {
-      while (r) {
-        p *= n;
-        k *= r;
-
-        // gcd of p, k
-        long long m = __gcd(p, k);
-
-        // dividing by gcd, to simplify
-        // product division by their gcd
-        // saves from the overflow
-        p /= m;
-        k /= m;
-
-        n--;
-        r--;
-      }
- 
-      // k should be simplified to 1
-      // as C(n, r) is a natural number
-      // (denominator should be 1 ) .
-    }
- 
-    // if our approach is correct p = ans and k =1
-    return p;
-  };
-  
   unordered_map<string, int> map;
   for (int size = 1; size < s.size() + 1; size++) {
     for (int i = 0; i <= s.size() - size; i++) {
@@ -62,7 +26,7 @@ int sherlockAndAnagrams(string s) {
   
   long ans = 0;
   for (const auto &entry : map) {
-    if (entry.second > 1) ans += nCr(entry.second, 2);
+    ans += (entry.second * (entry.second - 1) / 2);
   }
   return ans;
 }
