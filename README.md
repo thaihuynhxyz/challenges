@@ -58,6 +58,7 @@
 | [Mark and toys](https://www.hackerrank.com/challenges/mark-and-toys)        | Easy        | 35/35   | [18/18](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/mark_and_toys) |
 | [Sorting: Comparator](https://www.hackerrank.com/challenges/ctci-comparator-sorting)        | Medium        | 35/35   | [8/8](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/comparator_sorting) |
 | [Count triplets](https://www.hackerrank.com/challenges/count-triplets-1)        | Medium        | 35/35   | [13/13](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/count_triplets) |
+| [Sherlock and valid string](https://www.hackerrank.com/challenges/sherlock-and-valid-string)        | Medium        | 35/35   | [13/13](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/interview/strings/sherlock_and_valid_string) |
 | [Swap Nodes [Algo]](https://www.hackerrank.com/challenges/swap-nodes-algo)        | Medium        | 40/40   | [12/12](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/data_structures/tree/swap_nodes_algo) |
 | [New year chaos](https://www.hackerrank.com/challenges/new-year-chaos)        | Medium        | 40/40   | [12/12](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/new_year_chaos) |
 | [Minimum swaps](https://www.hackerrank.com/challenges/minimum-swaps-2)        | Medium        | 40/40   | [15/15](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/minimum_swaps) |

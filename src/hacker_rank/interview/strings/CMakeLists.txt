@@ -4,3 +4,4 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_subdirectory(alternating_characters)
 add_subdirectory(making_anagrams)
+add_subdirectory(sherlock_and_valid_string)
