@@ -1,0 +1,154 @@
+#define CATCH_CONFIG_RUNNER
+
+#include <bits/stdc++.h>
+#include "catch2/catch.hpp"
+
+using namespace std;
+
+vector<string> split_string(string);
+
+// Complete the substrCount function below.
+long substrCount(int n, string s, long ans = 0) {
+    for (auto start = 0; start < n;) {
+        long same = 0;
+        int except = false;
+        char c = s[start];
+        for (auto end = start; end < n; end++) {
+            if (s[end] == c) {
+                if (!except) {
+                    same++;
+                } else {
+                    same--;
+                    ans++;
+                    if (same == 0) break;
+                }
+            } else {
+                if (except) break;
+                ans += (same +1) * same / 2;
+                except = true;
+                start = end;
+            }
+        }
+        if (start + same == s.size() && !except) return ans + (same +1) * same / 2;
+    }
+    return ans;
+}
+
+void test_main(const string &input_file, const string &result_file) {
+  std::ifstream input(input_file);
+  std::cin.rdbuf(input.rdbuf());
+  ofstream fout(result_file);
+
+  int n;
+  cin >> n;
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+  string s;
+  getline(cin, s);
+
+  auto result = substrCount(n, s);
+
+  fout << result << "\n";
+
+  fout.close();
+}
+
+string read(const string &filename) {
+  std::ifstream output(filename);
+  std::cin.rdbuf(output.rdbuf());
+  string result;
+  getline(cin, result);
+  return result;
+}
+
+TEST_CASE("Test case 0", "[single-file]") {
+  test_main("input00.txt", "result00.txt");
+
+  auto output = read("output00.txt");
+  auto result = read("result00.txt");
+
+  REQUIRE(result == output);
+}
+
+TEST_CASE("Test case 1", "[single-file]") {
+  test_main("input01.txt", "result01.txt");
+
+  auto output = read("output01.txt");
+  auto result = read("result01.txt");
+
+  REQUIRE(result == output);
+}
+
+TEST_CASE("Test case 2", "[single-file]") {
+  test_main("input02.txt", "result02.txt");
+
+  auto output = read("output02.txt");
+  auto result = read("result02.txt");
+
+  REQUIRE(result == output);
+}
+
+TEST_CASE("Test case 3", "[single-file]") {
+  test_main("input03.txt", "result03.txt");
+
+  auto output = read("output03.txt");
+  auto result = read("result03.txt");
+
+  REQUIRE(result == output);
+}
+
+TEST_CASE("Test case 4", "[single-file]") {
+  test_main("input04.txt", "result04.txt");
+
+  auto output = read("output04.txt");
+  auto result = read("result04.txt");
+
+  REQUIRE(result == output);
+}
+
+TEST_CASE("Test case 16", "[single-file]") {
+  test_main("input16.txt", "result16.txt");
+
+  auto output = read("output016.txt");
+  auto result = read("result016.txt");
+
+  REQUIRE(result == output);
+}
+
+int main(int argc, char *argv[]) {
+  // global setup...
+
+  int result = Catch::Session().run(argc, argv);
+
+  // global clean-up...
+  return result;
+}
+
+vector<string> split_string(string input_string) {
+  string::iterator new_end = unique(input_string.begin(), input_string.end(), [](const char &x, const char &y) {
+    return x == y and x == ' ';
+  });
+
+  input_string.erase(new_end, input_string.end());
+
+  while (input_string[input_string.length() - 1] == ' ') {
+    input_string.pop_back();
+  }
+
+  vector<string> splits;
+  char delimiter = ' ';
+
+  size_t i = 0;
+  size_t pos = input_string.find(delimiter);
+
+  while (pos != string::npos) {
+    splits.push_back(input_string.substr(i, pos - i));
+
+    i = pos + 1;
+    pos = input_string.find(delimiter, i);
+  }
+
+  splits.push_back(input_string.substr(i, min(pos, input_string.length()) - i + 1));
+
+  return splits;
+}
