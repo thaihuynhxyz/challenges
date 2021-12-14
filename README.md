@@ -43,6 +43,7 @@
 | [Jumping on the clouds](https://www.hackerrank.com/challenges/jumping-on-the-clouds)    | Easy          | 20/20   | [9/9](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/jumping_on_the_clouds)  |
 | [Repeated String](https://www.hackerrank.com/challenges/repeated-string)    | Easy          | 20/20   | [23/23](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/repeated_string)  |
 | [Arrays: Left Rotation](https://www.hackerrank.com/challenges/ctci-array-left-rotation)    | Easy          | 20/20   | [11/11](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/array_left_rotation)  |
+| [Alternating Characters](https://www.hackerrank.com/challenges/alternating-characters)            | Easy          | 20/20   | [6/6](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/interview/strings/alternating_characters)  |
 | [Tree: Huffman Decoding](https://www.hackerrank.com/challenges/tree-huffman-decoding)    | Medium          | 20/20   | [7/7](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/data_structures/tree/tree_huffman_decoding)  |
 | [Picking Numbers](https://www.hackerrank.com/challenges/picking-numbers/problem)  | Easy          | 20/20   | [10/10](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/algorithms/implementation/picking_numbers) |
 | [Forming_a_Magic_Square](https://www.hackerrank.com/challenges/magic-square-forming/problem)              | Medium        | 20/20   | [23/23](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/algorithms/implementation/forming_a_magic_square) |
@@ -74,6 +75,7 @@
 | [Minimum Operations to Make a Uni-Value Grid](https://leetcode.com/contest/weekly-contest-262/problems/minimum-operations-to-make-a-uni-value-grid/)            | Medium          | [42/42](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/minimum_operations_to_make_a_uni_value_grid)  |
 | [Rectangle Area](https://leetcode.com/problems/rectangle-area/)            | Medium          | [3080/3080](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/rectangle_area)  |
 | [Perfect Squares](https://leetcode.com/problems/perfect-squares/)            | Medium          | [588/588](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/perfect_squares)  |
+| [Perfect Squares](https://leetcode.com/problems/flip-string-to-monotone-increasing/)            | Medium          | [93/93](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/flip_string_to_monotone_increasing)  |
 
 # codility
 | Problem                                                                           | Difficulty    | Test |

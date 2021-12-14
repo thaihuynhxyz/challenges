@@ -8,15 +8,14 @@ using namespace std;
 vector<string> split_string(string);
 
 /*
- * Complete the 'checkMagazine' function below.
+ * Complete the 'alternatingCharacters' function below.
  *
- * The function accepts following parameters:
- *  1. STRING_ARRAY magazine
- *  2. STRING_ARRAY note
+ * The function is expected to return an INTEGER.
+ * The function accepts STRING s as parameter.
  */
 
-int minFlipsMonoIncr(string s, int c1 = 0) {
-  return accumulate(s.begin(), s.end(), 0, [&c1](const int &ans, const char &c) { return min(c1 += c - '0', ans + '1' - c); });
+int alternatingCharacters(string s, char i = ' ') {
+    return accumulate(s.begin(), s.end(), 0, [&i](const int &ans, const char &c) { return ans + (i != c ? (i = c) - c : 1); });
 }
 
 void test_main(const string &input_file, const string &result_file) {
@@ -24,21 +23,35 @@ void test_main(const string &input_file, const string &result_file) {
   std::cin.rdbuf(input.rdbuf());
   ofstream fout(result_file);
 
-  string s;
-  getline(cin, s);
 
-  int result = minFlipsMonoIncr(s);
+  int n;
+  cin >> n;
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-  fout << result << "\n";
+  for (auto i = 0; i < n; i++) {
+    string s;
+    getline(cin, s);
+
+    auto result = alternatingCharacters(s);
+
+    fout << result << "\n";
+  }
 
   fout.close();
 }
 
-string read(const string &filename) {
+vector<int> read(const string &filename) {
   std::ifstream output(filename);
   std::cin.rdbuf(output.rdbuf());
-  string result;
-  getline(cin, result);
+
+  vector<int> result;
+  while (true) {
+    string str;
+    getline(cin, str);
+    if (str.empty()) break;
+
+    result.push_back(stoi(str));
+  }
   return result;
 }
 
@@ -65,15 +78,6 @@ TEST_CASE("Test case 2", "[single-file]") {
 
   auto output = read("output02.txt");
   auto result = read("result02.txt");
-
-  REQUIRE(result == output);
-}
-
-TEST_CASE("Test case 3", "[single-file]") {
-  test_main("input03.txt", "result03.txt");
-
-  auto output = read("output03.txt");
-  auto result = read("result03.txt");
 
   REQUIRE(result == output);
 }
