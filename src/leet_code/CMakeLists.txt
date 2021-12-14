@@ -6,3 +6,4 @@ add_subdirectory(longest_continuous_subarray_with_absolute_diff_less_than_or_equ
 add_subdirectory(minimum_operations_to_make_a_uni_value_grid)
 add_subdirectory(rectangle_area)
 add_subdirectory(perfect_squares)
+add_subdirectory(flip_string_to_monotone_increasing)

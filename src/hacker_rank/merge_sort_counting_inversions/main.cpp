@@ -92,32 +92,32 @@ vector<string> read(const string &filename) {
   return result;
 }
 
-// TEST_CASE("Test case 0", "[single-file]") {
-//   test_main("input00.txt", "result00.txt");
+TEST_CASE("Test case 0", "[single-file]") {
+  test_main("input00.txt", "result00.txt");
 
-//   auto output = read("output00.txt");
-//   auto result = read("result00.txt");
+  auto output = read("output00.txt");
+  auto result = read("result00.txt");
 
-//   REQUIRE(result == output);
-// }
+  REQUIRE(result == output);
+}
 
-// TEST_CASE("Test case 1", "[single-file]") {
-//   test_main("input01.txt", "result01.txt");
+TEST_CASE("Test case 1", "[single-file]") {
+  test_main("input01.txt", "result01.txt");
 
-//   auto output = read("output01.txt");
-//   auto result = read("result01.txt");
+  auto output = read("output01.txt");
+  auto result = read("result01.txt");
 
-//   REQUIRE(result == output);
-// }
+  REQUIRE(result == output);
+}
 
-// TEST_CASE("Test case 2", "[single-file]") {
-//   test_main("input02.txt", "result02.txt");
+TEST_CASE("Test case 2", "[single-file]") {
+  test_main("input02.txt", "result02.txt");
 
-//   auto output = read("output02.txt");
-//   auto result = read("result02.txt");
+  auto output = read("output02.txt");
+  auto result = read("result02.txt");
 
-//   REQUIRE(result == output);
-// }
+  REQUIRE(result == output);
+}
 
 TEST_CASE("Test case 13", "[single-file]") {
   test_main("input13.txt", "result13.txt");
@@ -128,23 +128,23 @@ TEST_CASE("Test case 13", "[single-file]") {
   REQUIRE(result == output);
 }
 
-// TEST_CASE("Test case 14", "[single-file]") {
-//   test_main("input14.txt", "result14.txt");
+TEST_CASE("Test case 14", "[single-file]") {
+  test_main("input14.txt", "result14.txt");
 
-//   auto output = read("output14.txt");
-//   auto result = read("result14.txt");
+  auto output = read("output14.txt");
+  auto result = read("result14.txt");
 
-//   REQUIRE(result == output);
-// }
+  REQUIRE(result == output);
+}
 
-// TEST_CASE("Test case 15", "[single-file]") {
-//   test_main("input15.txt", "result15.txt");
+TEST_CASE("Test case 15", "[single-file]") {
+  test_main("input15.txt", "result15.txt");
 
-//   auto output = read("output15.txt");
-//   auto result = read("result15.txt");
+  auto output = read("output15.txt");
+  auto result = read("result15.txt");
 
-//   REQUIRE(result == output);
-// }
+  REQUIRE(result == output);
+}
 
 int main(int argc, char *argv[]) {
   // global setup...
