@@ -24,12 +24,12 @@ long substrCount(int n, string s, long ans = 0) {
                 }
             } else {
                 if (except) break;
-                ans += (same +1) * same / 2;
+                ans += (same + 1) * same / 2;
                 except = true;
                 start = end;
             }
         }
-        if (start + same == s.size() && !except) return ans + (same +1) * same / 2;
+        if (start + same == s.size() && !except) return ans + (same + 1) * same / 2;
     }
     return ans;
 }

@@ -78,7 +78,8 @@
 | [Minimum Operations to Make a Uni-Value Grid](https://leetcode.com/contest/weekly-contest-262/problems/minimum-operations-to-make-a-uni-value-grid/)            | Medium          | [42/42](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/minimum_operations_to_make_a_uni_value_grid)  |
 | [Rectangle Area](https://leetcode.com/problems/rectangle-area/)            | Medium          | [3080/3080](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/rectangle_area)  |
 | [Perfect Squares](https://leetcode.com/problems/perfect-squares/)            | Medium          | [588/588](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/perfect_squares)  |
-| [Perfect Squares](https://leetcode.com/problems/flip-string-to-monotone-increasing/)            | Medium          | [93/93](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/flip_string_to_monotone_increasing)  |
+| [Flip String to Monotone Increasing](https://leetcode.com/problems/flip-string-to-monotone-increasing/)            | Medium          | [93/93](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/flip_string_to_monotone_increasing)  |
+| [Find Good Days to Rob the Bank](https://leetcode.com/problems/find-good-days-to-rob-the-bank/)            | Medium          | [144/144](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/find_good_days_to_rob_the_bank)  |
 
 # codility
 | Problem                                                                           | Difficulty    | Test |
