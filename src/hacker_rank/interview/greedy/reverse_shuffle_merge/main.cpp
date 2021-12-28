@@ -14,29 +14,29 @@ vector<string> split_string(string);
  * The function accepts STRING s as parameter.
  */
 
-string reverseShuffleMerge(string s, unordered_map<char, int> u_m = {}, string ans = "") {
-  for (const auto &c : s) u_m[c]++;
-  for (auto &e : u_m) e.second /= 2;
-  map<char, int> m(u_m.begin(), u_m.end());
-  for (int i = s.size() - 1; i >= 0 && !m.empty();) {
-    for (int j = i, k = 0; j >= 0 && k < m.size();) {
-      if (s[j] == (*next(m.begin(), k)).first) {
-        ans += s[j];
-        if (!--m[s[j]]) m.erase(s[j]);
-        i = --j;
-        k = 0;
-      } else if (m.count(s[j])) {
-        if (u_m[s[j]]) {
-          u_m[s[j--]]--;
-        } else {
-          k++;
-          while(++j <= i) u_m[s[j]]++;
-          j = i;
-        }
+string reverseShuffleMerge(string s, array<int, 26> shuffle = {}, string ans = "") {
+  auto index = [](char c) { return c - 'a'; };
+  for (const auto &c : s) shuffle[index(c)]++;
+  for (auto &i : shuffle) i /= 2;
+  array<int, 26> reverse(shuffle);
+  for (auto it = s.rbegin(); it != s.rend(); it++) {
+    auto i = index(*it);
+    if (!reverse[i]) {  // All reverses are appended to ans
+      shuffle[i]--;
+      continue;
+    }
+    while(auto last = ans.back()) {
+      auto j = index(last);
+      if (j > i && shuffle[j]) {
+        shuffle[j]--;
+        reverse[j]++;
+        ans.pop_back();
       } else {
-        u_m[s[j--]]--;
+        break;
       }
     }
+    ans += *it;
+    reverse[i]--;
   }
   return ans;
 }
