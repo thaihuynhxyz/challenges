@@ -4,3 +4,4 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_subdirectory(implementation)
 add_subdirectory(warmup)
+add_subdirectory(greedy)
