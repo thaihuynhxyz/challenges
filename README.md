@@ -84,6 +84,7 @@
 | [Perfect Squares](https://leetcode.com/problems/perfect-squares/)            | Medium          | [588/588](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/perfect_squares)  |
 | [Flip String to Monotone Increasing](https://leetcode.com/problems/flip-string-to-monotone-increasing/)            | Medium          | [93/93](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/flip_string_to_monotone_increasing)  |
 | [Find Good Days to Rob the Bank](https://leetcode.com/problems/find-good-days-to-rob-the-bank/)            | Medium          | [144/144](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/find_good_days_to_rob_the_bank)  |
+| [Minimum Distance to Type a Word Using Two Fingers](https://leetcode.com/problems/minimum-distance-to-type-a-word-using-two-fingers)            | Hard          | [144/144](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/minimum_distance_to_type_a_word_using_two_fingers)  |
 
 # codility
 | Problem                                                                           | Difficulty    | Test |
