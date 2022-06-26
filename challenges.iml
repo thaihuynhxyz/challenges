@@ -6,11 +6,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/leet_code/flood_fill/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/leet_code/no733_flood_fill/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/leet_code/rust200_number_of_islands/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/leet_code/rust733_flood_fill/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/src/leet_code/flood_fill/target" />
       <excludeFolder url="file://$MODULE_DIR$/src/leet_code/no733_flood_fill/target" />
       <excludeFolder url="file://$MODULE_DIR$/src/leet_code/rust733_flood_fill/target" />
+      <excludeFolder url="file://$MODULE_DIR$/src/leet_code/rust200_number_of_islands/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

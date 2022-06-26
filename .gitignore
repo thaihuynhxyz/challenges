@@ -106,4 +106,4 @@ fabric.properties
 
 # Added by cargo
 
-/target
+**/target

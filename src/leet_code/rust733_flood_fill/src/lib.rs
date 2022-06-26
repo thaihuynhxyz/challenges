@@ -1,4 +1,5 @@
 struct Solution;
+
 impl Solution {
     pub fn flood_fill(mut image: Vec<Vec<i32>>, sr: i32, sc: i32, new_color: i32) -> Vec<Vec<i32>> {
         let old_color = image[sr as usize][sc as usize];
@@ -28,18 +29,32 @@ impl Solution {
 }
 
 #[cfg(test)]
-mod tests {
+mod flood_fill_tests {
     use crate::Solution;
 
     #[test]
     fn test1() {
-        let result = Solution::flood_fill(vec![vec![1,1,1],vec![1,1,0],vec![1,0,1]], 1, 1, 2);
-        assert_eq!(result, [[2,2,2],[2,2,0],[2,0,1]]);
+        let result = Solution::flood_fill(vec![
+            vec![1, 1, 1],
+            vec![1, 1, 0],
+            vec![1, 0, 1],
+        ], 1, 1, 2);
+        assert_eq!(result, [
+            [2, 2, 2],
+            [2, 2, 0],
+            [2, 0, 1]
+        ]);
     }
 
     #[test]
     fn test2() {
-        let result = Solution::flood_fill(vec![vec![0,0,0],vec![0,0,0]], 0, 0, 0);
-        assert_eq!(result, [[0,0,0],[0,0,0]]);
+        let result = Solution::flood_fill(vec![
+            vec![0, 0, 0],
+            vec![0, 0, 0],
+        ], 0, 0, 0);
+        assert_eq!(result, [
+            [0, 0, 0],
+            [0, 0, 0]
+        ]);
     }
 }

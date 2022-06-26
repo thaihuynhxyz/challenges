@@ -1,5 +1,5 @@
 [package]
-name = "challenges"
+name = "rust200_number_of_islands"
 version = "0.1.0"
 edition = "2021"
 
