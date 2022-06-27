@@ -1,6 +1,3 @@
-use std::cmp::max;
-use std::ops::Add;
-
 struct Solution;
 
 impl Solution {
@@ -15,7 +12,7 @@ impl Solution {
                     stack.push((i, j));
                     while let Some((ii, jj)) = stack.pop() {
                         if grid[ii][jj] == 1 {
-                            area = area.add(1);
+                            area += 1;
                             grid[ii][jj] = 0;
                         }
                         if ii > 0 && grid[ii - 1][jj] == 1 {
@@ -31,7 +28,7 @@ impl Solution {
                             stack.push((ii, jj + 1));
                         }
                     }
-                    ans = max(ans, area)
+                    ans = ans.max(area)
                 }
             }
         }
