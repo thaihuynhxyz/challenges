@@ -77,6 +77,7 @@
 | [Rooted Tree](https://www.hackerrank.com/challenges/rooted-tree)                                                                                       |    Hard    | 80/150  |                        [4/16](https://github.com/thaihuynhxyz/challenges/tree/master/src/hacker_rank/data_structures/advanced/rooted_tree)                         |
 
 # leetcode
+
 | Problem                                                                                                                                                                                 | Difficulty |                                                                           Test                                                                           |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | [Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/) |   Medium   | [60/60](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/longest_continuous_subarray_with_absolute_diff_less_than_or_equal_to_limit) |
@@ -87,9 +88,11 @@
 | [Find Good Days to Rob the Bank](https://leetcode.com/problems/find-good-days-to-rob-the-bank/)                                                                                         |   Medium   |                      [144/144](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/find_good_days_to_rob_the_bank)                      |
 | [Minimum Distance to Type a Word Using Two Fingers](https://leetcode.com/problems/minimum-distance-to-type-a-word-using-two-fingers)                                                    |    Hard    |            [144/144](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/minimum_distance_to_type_a_word_using_two_fingers)             |
 | [200. Number of Islands](https://leetcode.com/problems/number-of-islands)                                                                                                               |   Medium   |                       49/49 [rust](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/rust200_number_of_islands)                       |
+| [695. Max Area of Island](https://leetcode.com/problems/max-area-of-island)                                                                                                             |   Medium   |                     728/728 [rust](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/rust695_max_area_of_island)                      |
 | [733. Flood Fill](https://leetcode.com/problems/flood-fill)                                                                                                                             |    Easy    |                         277/277 [rust](https://github.com/thaihuynhxyz/challenges/tree/master/src/leet_code/rust733_flood_fill)                          |
 
 # codility
+
 | Problem                                                                            | Difficulty |                                                 Test                                                 |
 |------------------------------------------------------------------------------------|:----------:|:----------------------------------------------------------------------------------------------------:|
 | [Stack of Coins](https://app.codility.com/programmers/challenges/spooktober_2021/) |     ?      | [?/?](https://github.com/thaihuynhxyz/challenges/tree/master/src/codility/spooktober/stack_of_coins) |

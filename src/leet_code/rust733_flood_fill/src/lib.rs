@@ -6,22 +6,21 @@ impl Solution {
         if old_color == new_color {
             return image;
         }
+        let (m, n) = (image.len(), image[0].len());
         let mut stack = vec![(sr as usize, sc as usize)];
         while let Some((i, j)) = stack.pop() {
-            if image[i][j] == old_color {
-                image[i][j] = new_color;
-                if i > 0 {
-                    stack.push((i - 1, j));
-                }
-                if i < image.len() - 1 {
-                    stack.push((i + 1, j))
-                }
-                if j > 0 {
-                    stack.push((i, j - 1));
-                }
-                if j < image[0].len() - 1 {
-                    stack.push((i, j + 1));
-                }
+            image[i][j] = new_color;
+            if i > 0 && image[i - 1][j] == old_color {
+                stack.push((i - 1, j));
+            }
+            if i < m - 1 && image[i + 1][j] == old_color {
+                stack.push((i + 1, j))
+            }
+            if j > 0 && image[i][j - 1] == old_color {
+                stack.push((i, j - 1));
+            }
+            if j < n - 1 && image[i][j + 1] == old_color {
+                stack.push((i, j + 1));
             }
         }
         image
