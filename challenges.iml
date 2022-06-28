@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/leet_code/no733_flood_fill/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/leet_code/rust200_number_of_islands/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/leet_code/rust733_flood_fill/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/leet_code/rust1020_number_of_enclaves/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/leet_code/rust1254_number_of_closed_islands/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/leet_code/rust695_max_area_of_island/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
@@ -17,6 +18,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/leet_code/rust200_number_of_islands/target" />
       <excludeFolder url="file://$MODULE_DIR$/src/leet_code/rust695_max_area_of_island/target" />
       <excludeFolder url="file://$MODULE_DIR$/src/leet_code/rust1254_number_of_closed_islands/target" />
+      <excludeFolder url="file://$MODULE_DIR$/src/leet_code/rust1020_number_of_enclaves/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
