@@ -8,21 +8,21 @@ class Solution {
                 it[edge[1]] = it.getOrDefault(edge[1], listOf()).plus(edge[0])
             }
         }
-        return graph.bfsFrom(source) { it == destination }
+        return graph.dfsFrom(source) { it == destination }
     }
 
-    private inline fun <T> Map<T, List<T>>.bfsFrom(source: T, predicate: (T) -> Boolean): Boolean {
+    private inline fun <T> Map<T, List<T>>.dfsFrom(source: T, predicate: (T) -> Boolean): Boolean {
         val visited = hashSetOf<T>()
-        val queue = mutableListOf<T>().apply { add(source) }
-        while (queue.isNotEmpty()) {
-            val node = queue.removeLast()
+        val stack = mutableListOf<T>().apply { add(source) }
+        while (stack.isNotEmpty()) {
+            val node = stack.removeLast()
             if (predicate(node)) {
                 return true
             }
             if (!visited.add(node)) continue
             for (neighbor in this[node]!!) {
                 if (!visited.contains(neighbor)) {
-                    queue.add(neighbor)
+                    stack.add(neighbor)
                 }
             }
         }
