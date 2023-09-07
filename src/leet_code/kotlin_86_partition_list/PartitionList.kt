@@ -1,5 +1,7 @@
 package leet_code.kotlin_86_partition_list
 
+import leet_code.kotlin_data.ListNode
+
 /**
  * Example:
  * var li = ListNode(5)
@@ -39,31 +41,5 @@ class PartitionList {
         tail1?.next = head2
         tail2?.next = null
         return head1 ?: head2
-    }
-}
-
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
-
-    override fun equals(other: Any?): Boolean {
-        if (other !is ListNode) {
-            return false
-        }
-        var currentThis: ListNode? = this
-        var currentOther: ListNode? = other
-        while (currentThis != null && currentOther != null) {
-            if (currentThis.`val` != currentOther.`val`) {
-                return false
-            }
-            currentThis = currentThis.next
-            currentOther = currentOther.next
-        }
-        return !(currentThis != null || currentOther != null)
-    }
-
-    override fun hashCode(): Int {
-        var result = `val`
-        result = 31 * result + (next?.hashCode() ?: 0)
-        return result
     }
 }

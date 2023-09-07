@@ -1,24 +1,13 @@
 package leet_code.kotlin_725_split_linked_list_in_parts
 
+import leet_code.kotlin_data.ListNode
+
 /**
  * Example:
  * var li = ListNode(5)
  * var v = li.`val`
  * Definition for singly-linked list.
  */
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
-
-    override fun equals(other: Any?): Boolean {
-        return `val` == (other as ListNode).`val` && next == other.next
-    }
-
-    override fun hashCode(): Int {
-        var result = `val`
-        result = 31 * result + (next?.hashCode() ?: 0)
-        return result
-    }
-}
 
 class Solution {
     fun splitListToParts(head: ListNode?, k: Int): Array<ListNode?> {

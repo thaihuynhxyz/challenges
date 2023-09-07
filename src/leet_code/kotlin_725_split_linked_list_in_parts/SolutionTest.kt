@@ -1,5 +1,6 @@
 package leet_code.kotlin_725_split_linked_list_in_parts
 
+import leet_code.kotlin_data.ListNode
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
