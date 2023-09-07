@@ -1,5 +1,7 @@
 package leet_code.kotlin_37_sudoku_solver
 
+import leet_code.kotlin_data.BackTracking
+
 class Solution {
     fun solveSudoku(board: Array<CharArray>) {
         val rows = Array(9) { BooleanArray(9) }
@@ -92,37 +94,5 @@ data class Candidate(
         var result = data.contentDeepHashCode()
         result = 31 * result + index
         return result
-    }
-}
-
-class BackTracking<T : BackTracking.Companion.Candidate<T>> {
-
-    fun solve(candidate: T): Boolean {
-        return when {
-            candidate.isAccept() -> true
-            candidate.isReject() -> false
-            else -> {
-                for (c in candidate.candidates()) {
-                    c.commit()
-                    if (solve(c)) return true
-                    c.rollback()
-                }
-                false
-            }
-        }
-    }
-
-    companion object {
-        interface Candidate<T> {
-            fun isReject(): Boolean
-
-            fun isAccept(): Boolean
-
-            fun commit()
-
-            fun rollback()
-
-            fun candidates(): List<T>
-        }
     }
 }
