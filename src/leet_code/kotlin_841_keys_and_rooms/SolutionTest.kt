@@ -6,10 +6,9 @@ import org.junit.jupiter.api.Test
 class SolutionTest {
     @Test
     fun test() {
-        val instance = Solution()
         Assertions.assertEquals(
             true,
-            instance.canVisitAllRooms(
+            Solution().canVisitAllRooms(
                 listOf(
                     listOf(1),
                     listOf(2),
@@ -20,7 +19,7 @@ class SolutionTest {
         )
         Assertions.assertEquals(
             false,
-            instance.canVisitAllRooms(
+            Solution().canVisitAllRooms(
                 listOf(
                     listOf(1, 3),
                     listOf(3, 0, 1),

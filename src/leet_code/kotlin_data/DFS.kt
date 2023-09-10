@@ -1,9 +1,11 @@
 package leet_code.kotlin_data
 
-abstract class DSF<T> {
+abstract class DFS<T> {
+    private val stack = mutableListOf<T>()
+    private val visited = mutableSetOf<T>()
+
     fun solve(start: T, onVisit: (T) -> Unit = {}) {
-        val stack = mutableListOf<T>()
-        val visited = mutableSetOf<T>()
+        visited.add(start)
         stack.add(start)
         while (stack.isNotEmpty()) {
             val top = stack.removeLast()
@@ -11,11 +13,24 @@ abstract class DSF<T> {
 
             for (node in children(top)) {
                 if (visited.add(node)) {
-                    stack.add(node)
+                    push(node, top)
                 }
             }
         }
     }
 
+    protected open fun push(children: T, parent: T) {
+        stack.add(children)
+    }
+
     abstract fun children(input: T): List<T>
+}
+
+abstract class ParentDFS<T> : DFS<T>() {
+    protected val parent = mutableMapOf<T, T>()
+
+    override fun push(children: T, parent: T) {
+        super.push(children, parent)
+        this.parent[children] = parent
+    }
 }
