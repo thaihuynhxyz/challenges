@@ -1,4 +1,4 @@
-package leet_code.kotlin_228_sumary_ranges
+package leet_code.kotlin_228_summary_ranges
 
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test

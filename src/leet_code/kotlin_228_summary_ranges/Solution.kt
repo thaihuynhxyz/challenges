@@ -1,4 +1,4 @@
-package leet_code.kotlin_228_sumary_ranges
+package leet_code.kotlin_228_summary_ranges
 
 class Solution {
     fun summaryRanges(nums: IntArray): List<String> {
