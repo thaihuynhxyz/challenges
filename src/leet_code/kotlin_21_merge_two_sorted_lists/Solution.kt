@@ -3,7 +3,7 @@ package leet_code.kotlin_21_merge_two_sorted_lists
 import leet_code.kotlin_data.ListNode
 
 class Solution {
-    fun mergeTwoLists(list1: ListNode?, list2: ListNode?): ListNode? {
+    fun mergeTwoLists(list1: ListNode<Int>?, list2: ListNode<Int>?): ListNode<Int>? {
         var l1 = list1
         var l2 = list2
         val dummy = ListNode(0)
