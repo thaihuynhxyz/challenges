@@ -10,7 +10,7 @@ import leet_code.kotlin_data.ListNode
  */
 
 class Solution {
-    fun hasCycle(head: ListNode?): Boolean {
+    fun hasCycle(head: ListNode<Int>?): Boolean {
         var slow = head
         var fast = head?.next
         while (fast != null && fast != slow) {

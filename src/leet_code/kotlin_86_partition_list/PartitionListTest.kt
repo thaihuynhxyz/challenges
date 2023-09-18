@@ -14,7 +14,7 @@ class PartitionListTest {
         Assertions.assertEquals(expected, actual)
     }
 
-    private fun fromArray(array: IntArray): ListNode? {
+    private fun fromArray(array: IntArray): ListNode<Int>? {
         if (array.isEmpty()) {
             return null
         }

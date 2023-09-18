@@ -1,8 +1,10 @@
 package leet_code.kotlin_2477_minimum_fuel_cost_to_report_to_the_capital
 
 import leet_code.kotlin_data.ParentDFS
+import leet_code.kotlin_data.PreOrderDFS
 
-class Solution : ParentDFS<Int>() {
+class Solution : PreOrderDFS<Int>(), ParentDFS<Int> {
+    override val parent = mutableMapOf<Int, Int>()
 
     private val graph = mutableMapOf<Int, List<Int>>()
 
@@ -24,5 +26,5 @@ class Solution : ParentDFS<Int>() {
         return peopleFuel[0].second
     }
 
-    override fun children(input: Int) = graph[input] ?: emptyList()
+    override fun children(input: Int) = graph[input]?.toMutableList() ?: mutableListOf()
 }

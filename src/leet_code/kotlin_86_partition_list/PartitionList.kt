@@ -12,11 +12,11 @@ import leet_code.kotlin_data.ListNode
  * }
  */
 class PartitionList {
-    fun partition(head: ListNode?, x: Int): ListNode? {
-        var head1: ListNode? = null
-        var head2: ListNode? = null
-        var tail1: ListNode? = null
-        var tail2: ListNode? = null
+    fun partition(head: ListNode<Int>?, x: Int): ListNode<Int>? {
+        var head1: ListNode<Int>? = null
+        var head2: ListNode<Int>? = null
+        var tail1: ListNode<Int>? = null
+        var tail2: ListNode<Int>? = null
         var node = head
         while (node != null) {
             if (node.`val` < x) {

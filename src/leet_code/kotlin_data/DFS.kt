@@ -1,33 +1,66 @@
 package leet_code.kotlin_data
 
-abstract class DFS<T> {
-    private val stack = mutableListOf<T>()
-    private val visited = mutableSetOf<T>()
+interface DFS<T> {
+    val stack: MutableList<T>
+    val visited: MutableSet<T>
 
     fun solve(start: T, onVisit: (T) -> Unit = {}) {
         visited.add(start)
         stack.add(start)
-        while (stack.isNotEmpty()) {
-            val top = stack.removeLast()
-            onVisit(top)
+        dfs(start, onVisit)
+    }
 
-            for (node in children(top)) {
-                if (visited.add(node)) {
-                    push(node, top)
+    fun dfs(start: T, onVisit: (T) -> Unit = {})
+
+    fun push(children: T, parent: T) {
+        stack.add(children)
+    }
+
+    fun canVisit(node: T) = visited.add(node)
+
+    fun children(input: T): MutableList<T>?
+}
+
+abstract class PreOrderDFS<T> : DFS<T> {
+    override val stack: MutableList<T> = mutableListOf()
+    override val visited: MutableSet<T> = mutableSetOf()
+
+    override fun dfs(start: T, onVisit: (T) -> Unit) {
+        while (stack.isNotEmpty()) {
+            stack.removeLast()?.let { top ->
+                onVisit(top)
+                children(top)?.let {
+                    for (node in it) {
+                        if (canVisit(node)) {
+                            push(node, top)
+                        }
+                    }
                 }
             }
         }
     }
-
-    protected open fun push(children: T, parent: T) {
-        stack.add(children)
-    }
-
-    abstract fun children(input: T): List<T>
 }
 
-abstract class ParentDFS<T> : DFS<T>() {
-    protected val parent = mutableMapOf<T, T>()
+abstract class PostOrderDFS<T> : DFS<T> {
+    override val stack: MutableList<T> = mutableListOf()
+    override val visited: MutableSet<T> = mutableSetOf()
+
+    override fun dfs(start: T, onVisit: (T) -> Unit) {
+        while (stack.isNotEmpty()) {
+            while (children(stack.last())?.isNotEmpty() == true) {
+                stack.last().let { parent ->
+                    if (canVisit(children(parent)!!.last())) {
+                        push(children(parent)!!.removeLast(), parent)
+                    }
+                }
+            }
+            onVisit(stack.removeLast())
+        }
+    }
+}
+
+interface ParentDFS<T> : DFS<T> {
+    val parent: MutableMap<T, T>
 
     override fun push(children: T, parent: T) {
         super.push(children, parent)

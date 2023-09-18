@@ -10,8 +10,8 @@ import leet_code.kotlin_data.ListNode
  */
 
 class Solution {
-    fun splitListToParts(head: ListNode?, k: Int): Array<ListNode?> {
-        val result = Array<ListNode?>(k) { null }
+    fun splitListToParts(head: ListNode<Int>?, k: Int): Array<ListNode<Int>?> {
+        val result = Array<ListNode<Int>?>(k) { null }
         var size = 0
         var node = head
         while (node != null) {

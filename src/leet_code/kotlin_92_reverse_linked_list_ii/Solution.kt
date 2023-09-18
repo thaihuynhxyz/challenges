@@ -10,10 +10,10 @@ import leet_code.kotlin_data.ListNode
  */
 
 class Solution {
-    fun reverseBetween(head: ListNode?, left: Int, right: Int): ListNode? {
+    fun reverseBetween(head: ListNode<Int>?, left: Int, right: Int): ListNode<Int>? {
         val dummy = ListNode(0)
         dummy.next = head
-        var pre: ListNode? = dummy
+        var pre: ListNode<Int>? = dummy
         repeat(left - 1) { pre = pre!!.next }
 
         val start = pre!!.next
