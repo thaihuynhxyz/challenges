@@ -1,6 +1,5 @@
 #define CATCH_CONFIG_RUNNER
 
-#include <bits/stdc++.h>
 #include "catch2/catch.hpp"
 #include <cstdio>
 #include <vector>
@@ -8,6 +7,7 @@
 #include <algorithm>
 #include <set>
 #include <queue>
+#include <unordered_set>
 
 using namespace std;
 

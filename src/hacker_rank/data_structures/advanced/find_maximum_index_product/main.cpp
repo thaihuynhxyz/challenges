@@ -1,7 +1,6 @@
 #define CATCH_CONFIG_RUNNER
 
 #include <algorithm>
-#include <bits/stdc++.h>
 #include "catch2/catch.hpp"
 
 using namespace std;

@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_RUNNER
 
-#include <bits/stdc++.h>
+#include <unordered_set>
 #include "catch2/catch.hpp"
 
 using namespace std;

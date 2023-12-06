@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_RUNNER
 
-#include <bits/stdc++.h>
 #include "catch2/catch.hpp"
+#include <queue>
 
 using namespace std;
 
