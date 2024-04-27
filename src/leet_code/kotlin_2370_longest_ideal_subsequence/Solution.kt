@@ -4,18 +4,30 @@ import kotlin.math.*
 
 class Solution {
     fun longestIdealString(s: String, k: Int): Int {
-        val dp = Array(s.length) { IntArray(26) }
-        s.map { it - 'a' }.forEachIndexed { index, c ->
-            for (i in 0 until 26) {
-                val previous = dp.getOrNull(index - 1)?.get(i) ?: 0
-                if (abs(c - i) <= k) {
-                    dp[index][c] = max(previous + 1, dp[index][c])
-                }
-                if (i != c) {
-                    dp[index][i] = previous
-                }
+        return s.map { it - 'a' }.fold(
+            Accumulator(
+                MutableList(26) { 0 },
+                Int.MAX_VALUE,
+                Int.MIN_VALUE,
+                0,
+            )
+        ) { acc, c ->
+            val dp = acc.dp
+            val minC = min(acc.minC, c)
+            val maxC = max(acc.maxC, c)
+            var m = 0
+            for (i in max(minC, c - k)..min(maxC, c + k)) {
+                m = max(m, dp[i])
             }
-        }
-        return dp.last().max()
+            dp[c] = m + 1
+            Accumulator(dp, minC, maxC, max(acc.res, dp[c]))
+        }.res
     }
+
+    data class Accumulator(
+        val dp: MutableList<Int>,
+        val minC: Int,
+        val maxC: Int,
+        val res: Int,
+    )
 }
