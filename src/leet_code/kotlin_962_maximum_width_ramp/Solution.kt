@@ -1,34 +1,34 @@
 package leet_code.kotlin_962_maximum_width_ramp
 
-import kotlin.math.*
-
 typealias DecreaseStack = MutableList<Pair<Int, Int>>
 
-fun DecreaseStack.canPush(num: Int): Boolean = isEmpty() || num < last().second
-
-fun DecreaseStack.popWhileLestThanOrEqual(num: Int, index: Int): Int {
-    var accumulator = 0
+fun DecreaseStack.popWhileLestThanOrEqual(num: Int): Int? {
+    var minIndex: Int? = null
     val iterator = listIterator(size)
     while (iterator.hasPrevious()) {
         val i = iterator.previous()
         if (i.second > num) break
-        accumulator = max(accumulator, index - i.first)
+        minIndex = i.first
         iterator.remove()
     }
-    return accumulator
+    return minIndex
 }
 
 fun IntArray.toDecreaseStack(): DecreaseStack {
     return foldIndexed(mutableListOf()) { index, acc, i ->
-        acc.also { if (acc.canPush(i)) acc.add(index to i) }
+        acc.apply {
+            if (isEmpty() || last().second > i) add(index to i)
+        }
     }
 }
+
+fun Int?.widthRampTo(index: Int): Int = this?.let { index - it } ?: 0
 
 class Solution {
     fun maxWidthRamp(nums: IntArray): Int {
         val decreaseStack = nums.toDecreaseStack()
         return nums.foldRightIndexed(0) { index, i, acc ->
-            max(decreaseStack.popWhileLestThanOrEqual(i, index), acc).also {
+            acc.coerceAtLeast(decreaseStack.popWhileLestThanOrEqual(i).widthRampTo(index)).also {
                 if (decreaseStack.isEmpty()) return it
             }
         }
