@@ -1,21 +1,19 @@
 package leet_code.kotlin_1233_remove_sub_folders_from_the_filesystem
 
 class Trie {
-    val children = mutableMapOf<String, Trie>()
-    var isEnd = false
-}
+    private val children = mutableMapOf<String, Trie>()
+    private var isEnd = false
 
-fun Trie.insert(path: List<String>) {
-    when {
-        path.isEmpty() -> isEnd = true
-        else -> children.getOrPut(path.first()) { Trie() }.insert(path.drop(1))
+    fun insert(path: List<String>) {
+        if (isEnd || path.isEmpty()) isEnd = true
+        else children.getOrPut(path.first()) { Trie() }.insert(path.drop(1))
     }
-}
 
-fun Trie.traverse(): List<String> {
-    return children.flatMap { (folder, trie) ->
-        if (trie.isEnd) listOf(folder)
-        else trie.traverse().map { "$folder/$it" }
+    fun traverse(): List<String> {
+        return children.flatMap { (folder, trie) ->
+            if (trie.isEnd) listOf(folder)
+            else trie.traverse().map { "$folder/$it" }
+        }
     }
 }
 
